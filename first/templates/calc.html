@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content%}
+    <div class="row mt-5">
+        <div class="col">{% include "calc_form.html" %}</div>
+        <div class="col">{% include "calc_result.html" %}</div>
+    </div>
+    <div class="row mt-4">
+        <div class="col">{% include "calc_history.html" %}</div>
+    </div>
+{% endblock %}

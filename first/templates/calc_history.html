@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-header">
+        История вычислений
+    </div>
+    <div class="card-body">
+        {% if history %}
+        <table class="table text-center table-striped">
+            <thead class="thead-dark">
+                <th><b>ID</b></th>
+                <th><b>Дата</b></th>
+                <th><b>Первое число</b></th>
+                <th><b>Второе число</b></th>
+                <th><b>Результат</b></th>
+            </thead>
+            {% for item in history %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.date|date:"d.m.Y H:i" }}</td>
+                <td>{{ item.first }}</td>
+                <td>{{ item.second }}</td>
+                <td>{{ item.result }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        Нет данных
+        {% endif %}
+    </div>
+</div>

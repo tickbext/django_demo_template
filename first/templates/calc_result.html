@@ -1,0 +1,45 @@
+<div class="card h-100">
+    <div class="card-header">
+        {% if form.errors %}
+        Найденные ошибки
+        {% else %}
+        Результат вычисления
+        {% endif %}
+    </div>
+    <div class="card-body">
+        {% if data_sent %}
+            {% if form.errors %}
+                {% for key,value in form.errors.items %}
+                    <div class="alert alert-danger" role="alert">
+                        Поле {{ key|escape }}: {{ value.0|escape }}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <ul>
+                    <li>
+                        <blockquote class="blockquote">
+                            <p class="mb-0">Первое число: {{ first_value }}</p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <blockquote class="blockquote">
+                            <p class="mb-0">Второе число: {{ second_value }}</p>
+                        </blockquote>
+                    </li>
+                    <li>
+                        <blockquote class="blockquote">
+                            <p class="mb-0">Сумма чисел {{ first_value }} и {{ second_value }}
+                                равна {{ result }}.</p>
+                        </blockquote>
+                    </li>
+                </ul>
+            {% endif %}
+        {% else %}
+            <div class="row h-100">
+                <div class="col my-auto text-center">
+                    <i>Нет данных</i>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Страница "{{ pagename }}" - {{ sitename }}</title>
+
+        {% block base_css %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+              crossorigin="anonymous">
+        <link href="https://getbootstrap.com/docs/4.1/examples/sticky-footer-navbar/sticky-footer-navbar.css"
+              rel="stylesheet">
+        {% endblock %}
+    </head>
+    <body>
+        {% include "navbar.html" %}
+
+        <main role="main" class="container mt-3">
+            <h1>{{ pagename }}</h1>
+            <hr>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="footer">
+            <div class="container text-right">
+                <span class="text-muted">&copy; ШП, 2018</span>
+            </div>
+        </footer>
+    </body>
+</html>

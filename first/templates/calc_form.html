@@ -1,0 +1,21 @@
+<div class="card ">
+    <div class="card-header">Ввод данных</div>
+    <div class="card-body">
+        <form action="/calc" method="post">
+            {% csrf_token %}
+            <div class="form-group form-row">
+                <div class="col col-form-label">{{ form.first.label }}:</div>
+                <div class="col">{{ form.first }}</div>
+            </div>
+            <div class="form-group form-row">
+                <div class="col col-form-label">{{ form.second.label }}</div>
+                <div class="col align-items-center">{{ form.second }}</div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <input type="submit" class="btn btn-primary float-right btn-block" value="Вычислить">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

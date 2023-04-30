@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+              crossorigin="anonymous">
+        <title>Авторизация</title>
+        <link href="https://getbootstrap.com/docs/4.1/examples/sticky-footer-navbar/sticky-footer-navbar.css"
+              rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <!-- Fixed navbar -->
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" href="/">Demosite</a>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/calc">Калькулятор</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mr-1">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/logout">Выйти</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <style>
+            .col-md {
+                border: 1px solid black;
+            }
+        </style>
+        <main role="main" class="container">
+            <div class="row" style="margin-top: 100px;">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card ">
+                        <div class="card-header text-center">
+                            <h4>Авторизация</h4>
+                        </div>
+                        <div class="card-body">
+                            <form action="/login" method="post">
+                                <div class="form-group">
+                                    <label for="login">Логин:</label>
+                                    <input id="login" type="text" class="form-control form-control-sm" placeholder="Введите логин">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pass">Пароль:</label>
+                                    <input id="pass" type="password" class="form-control form-control-sm" placeholder="Введите пароль">
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-sm3 offset-sm-9">
+                                        <input type="submit" class="btn btn-primary" value="Войти">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <span class="text-muted">Place sticky footer content here.</span>
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"
+                integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"
+                integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"></script>
+    </body>
+</html>
