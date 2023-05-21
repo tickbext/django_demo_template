@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  backend:
+    image: tickbext/django_demo_template:latest
+    ports:
+      - "8083:80"
