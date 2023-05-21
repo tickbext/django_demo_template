@@ -21,7 +21,7 @@ pipeline {
         stage("build") {
             agent any
             steps {
-                sh 'docker build . -t tickbext/django_demo_template:${GIT_COMMIT} -t tickbext/django_demo_template:latest'
+                sh 'docker build . -t tricket/django_demo_template:${GIT_COMMIT} -t tickbext/django_demo_template:latest'
             }
         }
 
@@ -30,8 +30,8 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerCreds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sh 'docker login -u ${USERNAME} -p ${PASSWORD}'
-                    sh 'docker push tickbext/django_demo_template:${GIT_COMMIT}'
-                    sh 'docker push tickbext/django_demo_template:latest'
+                    sh 'docker push tricket/django_demo_template:${GIT_COMMIT}'
+                    sh 'docker push tricket/django_demo_template:latest'
                 }
             }
         }
