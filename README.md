@@ -12,4 +12,4 @@
 6. Создать stage сборки docker контейнера
 7. Создать репозиторий в dockerhub
 8. Создать stage, который пушит собранный образ в dockerhub
-9. testing :)
+9. testing :) (ploho testitsa :(((( )
