@@ -1,4 +1,4 @@
-Pipeline{
+pipeline{
 	agent none
 	stage("tests"){
 		agent{
