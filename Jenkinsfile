@@ -21,7 +21,7 @@ pipeline {
         stage("build") {
             agent any
             steps {
-                sh 'docker build . -t tricket/django_demo_template:${GIT_COMMIT} -t tickbext/django_demo_template:latest'
+                sh 'docker build . -t tricket/django_demo_template:${GIT_COMMIT} -t tricket/django_demo_template:latest'
             }
         }
 
