@@ -27,7 +27,7 @@ Pipeline{
 	stage("push"){
 		agent any
 		steps{
-			withCredentials([usernamePassword(credentialsId: '', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD'])
+			withCredentials([usernamePassword(credentialsId: 'dockerCreds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD'])
 			sh 'docker login -u ${USERNAME} -p ${PASSWORD}'
 			sh 'docker push tickbext/django_demo_template:${GIT_COMMIT}'
 			sh 'docker push tickbext/django_demo_template:latest'		
