@@ -39,10 +39,10 @@ Pipeline{
     agent any
     steps {
         withCredentials([sshUserPrivateKey(credentialsId: 'deploy_server', keyFileVariable: 'KEY_FILE')]) {
-            sh 'ssh -o StrictHostKeyChecking=no -i ${KEY_FILE} ${USERNAME}@server_ip mkdir -p ~${WORKSPACE}'
+            sh 'ssh -o StrictHostKeyChecking=no -i ${KEY_FILE} ${USERNAME}@io12.me mkdir -p ~${WORKSPACE}'
             sh 'scp -o StrictHostKeyChecking=no -i ${KEY_FILE} docker-compose.yaml ${USERNAME}@server_ip:~${WORKSPACE}'
-            sh 'ssh -o StrictHostKeyChecking=no -i ${KEY_FILE} ${USERNAME}@server_ip docker-compose -f ~${WORKSPACE}/docker-compose.yaml pull'
-            sh 'ssh -o StrictHostKeyChecking=no -i ${KEY_FILE} ${USERNAME}@server_ip docker-compose -f ~${WORKSPACE}/docker-compose.yaml up -d'
+            sh 'ssh -o StrictHostKeyChecking=no -i ${KEY_FILE} ${USERNAME}@io12.me docker-compose -f ~${WORKSPACE}/docker-compose.yaml pull'
+            sh 'ssh -o StrictHostKeyChecking=no -i ${KEY_FILE} ${USERNAME}@io12.me docker-compose -f ~${WORKSPACE}/docker-compose.yaml up -d'
         }
     }
 }
